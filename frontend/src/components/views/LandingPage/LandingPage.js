@@ -1,17 +1,19 @@
 import React,{ useEffect } from 'react';
 import axios from "axios";
+import { withRouter } from 'react-router-dom';
 function LandingPage(props) {
 
-    useEffect(() => {
-        axios.get('/api/hello')
-            .then(response => console.log(response.data))
-    }, []);
+    /*useEffect(() => {
+        axios.get('/api/main')
+            .then(response => console.log("member =" + response.data.email))
+    }, []);*/
 
     return (
-        <div>
-            LandingPage
+        <div style={{display:'flex', justifyContent:"center", alignItems:'center',
+                    width:'100%', height:'100vh'}}>
+            <h2>시작 페이지</h2>
         </div>
     );
 }
 
-export default LandingPage;
+export default withRouter(LandingPage);
